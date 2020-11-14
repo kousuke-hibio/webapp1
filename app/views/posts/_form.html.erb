@@ -1,0 +1,13 @@
+<%= form_for @post do |f| %>
+タイトル<%= f.text_field :title %><br>
+テキスト<%= f.text_field :content %><br>
+<div id="image-box">
+  <%= f.fields_for :images do |image| %>
+  <div data-index="<%= image.index %>" class="js-file_group">
+    <%= image.file_field :url, class: 'js-file' %><br>
+    <span class="js-remove">削除</span>
+  </div>
+<% end %>
+</div>
+<%= f.submit %>
+<% end %>
