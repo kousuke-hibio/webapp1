@@ -1,3 +1,4 @@
 <h1>投稿詳細ページ</h1>
-
-
+<% @post.images.each do |i| %>
+  <%= image_tag ("#{i.url.url}") %>
+<% end %>

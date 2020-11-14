@@ -4,12 +4,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:images).order('created_at DESC')
-    @posts = Post.all 
-    @images = Image.all 
   end 
 
   def show 
-    #@post = Post.find(params[:id])
+    @post = Post.includes(:images).find(params[:id])
   end 
 
   def create
