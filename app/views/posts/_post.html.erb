@@ -2,8 +2,8 @@
   <p><%= post.title %></p>
   <p><%= post.content %></p>
   <% post.images.each do |image| %>
-    <%= image_tag image.src.url %>
+    <%= image_tag image.url.url %>
   <% end %>
 </div>
 
-<%= link_to '編集', edit_post_path(post) %>
+<%= link_to '削除', post_path(post), method: :delete %>
