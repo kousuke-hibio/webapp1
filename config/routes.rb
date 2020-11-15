@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  post 'posts/new'
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users
 
-  resources :posts
-  post 'posts/new'
+  resources :posts do
+    resources :comments, only: [:create]
+  end 
+
 end

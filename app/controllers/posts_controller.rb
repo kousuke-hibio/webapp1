@@ -8,6 +8,8 @@ class PostsController < ApplicationController
 
   def show 
     @post = Post.includes(:images).find(params[:id])
+    @comments = @post.comments
+    @comment = Comment.new
   end 
 
   def create
