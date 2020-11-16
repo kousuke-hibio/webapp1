@@ -1,5 +1,5 @@
 <div class="content">
-  <p><%= post.title %></p>
+  <p><a href="/posts/<%= post.id %>"><%= post.title %></a></p>
   <p><%= post.content %></p>
   <% post.images.each do |image| %>
     <%= image_tag image.url.url %>

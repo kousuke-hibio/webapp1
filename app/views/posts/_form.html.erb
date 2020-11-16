@@ -5,7 +5,7 @@
   <div id="previews">
     <% if @post.persisted? %>
       <% @post.images.each_with_index do |image, i| %>
-        <%= image_tag image.url.url, data: { index: i }, width: "150px", height: "150px" %>
+        <%= image_tag image.url.url, data: { index: i }, width: "150px", height: "200px" %>
       <% end %>
     <% end %>
   </div>

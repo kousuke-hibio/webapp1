@@ -1,6 +1,16 @@
 <h1>ユーザ情報</h1>
-
-<div><%= @user.name %></div>
-<div><%= @user.email %></div>
+<div class="row">
+    <aside class="col-sm-4">
+      <h3 class="card-title"><%= @user.name %></h3>
+      <p class="card-title"><%= @user.email %></p>
+      <%= render 'relationships/follow_button', user: @user %>
+    </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="#" class="nav-link">Followings</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">Followers</a></li>
+    </ul>
+  </div>
+</div>
 
 
