@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :require_user_logged_in
-  #before_action :set_post, only: [:index, :create, :new]
+  before_action :correct_user, only: [:destroy]
 
   def index
     @posts = Post.includes(:images).order('created_at DESC')
@@ -14,12 +14,13 @@ class PostsController < ApplicationController
 
   def create
     
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       flash[:success] = '投稿に成功しました。'
       redirect_to @post
     else
+      @posts = current_user.feed_posts.order(id: :desc).page(params[:page])
       flash.now[:danger] = '投稿に失敗しました。'
       render 'new'
     end 
@@ -53,7 +54,10 @@ class PostsController < ApplicationController
     ).merge(user_id: current_user.id)
   end 
 
-  def set_post
-    #@post = Post.find(params[:id])
+  def correct_user
+    @post = current_user.posts.find_by(id: params[:id])
+    unless @post
+      redirect_to root_url
+    end 
   end 
 end
