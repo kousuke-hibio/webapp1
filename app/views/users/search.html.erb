@@ -1,0 +1,33 @@
+<%= form_tag(search_users_path, :method => 'get') do %>
+    <%= select_tag(:option, options_for_select([["user", "1"],["post","2"]]))%>
+    <%= text_field_tag :search %>
+    <%= submit_tag 'Search' %>
+<% end %>
+
+<% if @user_or_post == "1" %>
+  <h1>User</h1>
+    <table>
+      <% @users.each do |user| %>
+      <thead>
+        <tr>
+          <th></th>
+          <th><a href="/users/<%= user.id %>"><%= user.name %></a></th>
+        </tr>
+      </thead>
+      <% end %>
+    </table>
+
+<% elsif @user_or_post == "2" %>
+  <h2>Post</h2>
+    <table>
+      <% @posts.each do |post| %>
+      <thead>
+        <tr>
+          <th></th>
+          <th><a href="/posts/<%= post.id %>"><%= post.title %></a></th>
+        </tr>
+      </thead>
+      <% end %>
+    </table>
+<% else %>
+<% end %>
