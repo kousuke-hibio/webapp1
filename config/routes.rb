@@ -26,11 +26,15 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end 
+    member do 
+      get :likes
+    end
   end 
 
   resources :posts do
     resources :comments, only: [:create]
   end 
   resources :relationships, only: [:create, :destroy]
+  resources :favorites, only: [:create, :destroy]
 
 end
