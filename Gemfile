@@ -65,3 +65,4 @@ gem 'haml-rails'
 gem 'carrierwave'
 gem "jquery-rails"
 gem 'mini_magick'
+gem 'pry-rails'

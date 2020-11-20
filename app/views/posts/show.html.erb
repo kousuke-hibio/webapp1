@@ -1,6 +1,7 @@
 <h1>投稿詳細ページ</h1>
 <%= @post.title %><br>
 <%= @post.content %><br>
+<h4>いいね件数：<%= @post.favorites.count %></h4>
 <% @post.images.each do |i| %>
   <%= image_tag ("#{i.url.url}") %>
 <% end %>
@@ -18,5 +19,11 @@
   <br>
   <%= f.submit 'コメントする' %>
 <% end %>
+
+<% @post.favorited_users.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+
+<%= render "favorites/favorite_button", post: @post %>
 
 <%= link_to "ホームへ戻る", root_path %>
