@@ -1,28 +1,25 @@
-<ul class="list-unstyled">
- <% posts.each do |post| %>
-  <li class="media mb-3">
-    <div class="media-body">
-     <div>
-       <%= link_to post.user.name, user_path(post.user) %><span class="text-muted"> posted at <%= post.created_at %></span>
-     </div>
-     <div>
-       <p><a href="/posts/<%= post.id %>"><%= post.title %></a></p>
+<ul class="posts-content">
+  <% posts.each do |post| %>
+    <li class="card mb-3">
+      <div class="card-body">
+        <div class="card-title">
+          <h5><%= link_to post.user.name, user_path(post.user) %></h5><span class="text-muted"> posted at <%= post.created_at %></span>
+        </div>
+        <div>
+          <p><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
+        </div>
+        <div>
+          <% post.images.each do |image| %>
+            <%= image_tag image.url.url, :size =>'293x350', class: 'img-border' %>
+          <% end %>
+        </div>
+        <div>
+          <% if current_user == post.user %>
+            <%= link_to 'Delete', post, method: :delete, data: { confirm: "削除します。よろしいですか？" } %>
+          <% end %>
+        </div>
       </div>
-     <div>
-       <p><%= post.content %></p>
-     </div>
-     <div>
-       <% post.images.each do |image| %>
-         <%= image_tag image.url.url %>
-       <% end %>
-     </div>
-     <div>
-        <% if current_user == post.user %>
-          <%= link_to 'Delete', post, method: :delete, data: { confirm: "削除します。よろしいですか？" } %>
-        <% end %>
-     </div>
-    </div>
-  </li>
+   </li>
  <% end %>
  <%= paginate posts %>
 </ul>

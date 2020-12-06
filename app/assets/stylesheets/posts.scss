@@ -1,4 +1,157 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.posts-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.media {
+  margin-right: 28px;
+}
+.card {
+  margin: 26px;
+  border-bottom: 3px solid #e8e8e8;
+}
+.card-title {
+  display: flex;
+}
+.text-muted{
+  margin-left: 10px;
+}
+.user-icon {
+  display: flex;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  margin-left: 7vw;
+}
+.user-ct-nm {
+  font-size: 25px;
+  margin-top: 7px;
+  margin-left: 10px;
+  font-weight: 600;
+}
+.img-ct {
+  text-align: center;
+  margin-top: 40px;
+}
+.big-img {
+  margin-left: 25px;
+  height: 640px;
+  width: 555px;
+}
+.posts-under {
+  margin-left: 7vw;
+  margin-right: 6vw;
+}
+.favorite-posts {
+  font-weight: 600;
+  font-size: 20px;
+}
+.favorite-btn_on {
+  background: none;
+}
+.favorite-btn_off {
+  background: none;
+  color: rgb(237, 73, 86);
+}
+.comment-btn {
+  background-color: #6796de;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  border-radius: 3px;
+  text-align: center;
+  padding: 13px;
+}
+.btn-comments {
+  background-color: #6796de;
+  color: #fff;
+  margin-top: 10px;
+}
+.posts-box_ud {
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+.img-border {
+  border-radius: 10px;
+}
+.posts_title {
+  font-weight: 700;
+  font-size: 19px;
+  color: rgb(15, 20, 25);
+}
+.posts_title:hover {
+  text-decoration: underline;
+  color: rgb(15, 20, 25);
+}
+.prev-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+  .preview-box {
+    width: 450px;
+    height: 590px;
+    //margin: 0 15px 10px 0;
+    .upper-box {
+      height: 590px;
+      width: 100%;
+      img{
+        height: 590px;
+        width: 450px;
+      }
+    }
+    .lower-box {
+      display: flex;
+      text-align: center;
+      .update-box {
+        color: #00b0ff;
+        width: 50%;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid #eee;
+        background: #f5f5f5;
+        cursor: pointer;
+      }
+      .delete-box {
+        color: #00b0ff;
+        width: 50%;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid #eee;
+        background: #f5f5f5;
+        cursor: pointer;
+      }
+    }
+  }
+}
 
+//投稿クリックエリアのCSS
+.label-content{
+  margin-bottom: 10px;
+  width: 620px;
+  .label-box {
+    display: block;
+    border: 1px dashed #ccc;
+    position: relative;
+    background: #f5f5f5;
+    width: 100%;
+    height: 162px;
+    cursor: pointer;
+    &__text-visible {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      right: 16px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: bold;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      pointer-events: none;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+}

@@ -1,20 +1,40 @@
-<%= form_for @post do |f| %>
-タイトル<%= f.text_field :title %><br>
-テキスト<%= f.text_field :content %><br>
-<div id="image-box">
-  <div id="previews">
-    <% if @post.persisted? %>
-      <% @post.images.each_with_index do |image, i| %>
-        <%= image_tag image.url.url, data: { index: i }, width: "150px", height: "200px" %>
-      <% end %>
-    <% end %>
-  </div>
-  <%= f.fields_for :images do |image| %>
-  <div data-index="<%= image.index %>" class="js-file_group">
-    <%= image.file_field :url, class: 'js-file' %><br>
-    <span class="js-remove">削除</span>
-  </div>
-<% end %>
+<div class="posts_form">
+  <h2 class="sell__block__head">投稿内容を入力</h2>
+    <div class="main">
+      <section class="main_block">
+        <%= form_for @post do |f| %>
+          <h5 class="title-weight">タイトル</h5>
+          <p class="small">タイトルを入力してください(5文字以上20文字以内)</p>
+          <div class="form-group">
+            <%= f.text_field :title, placeholder: '例: ミルクティーベージュ', class: 'form-control' %>
+          </div>
+          <h5 class="title-weight">ヘアカラーの画像</h5>
+          <p class="small">ヘアカラーのBefore/After</p>
+          <div class="upload">
+            <div id="image-box">
+              <div class="prev-content"></div>
+              <div class="label-content">
+                <label class="abel-box" for="post_images_attributes_0_image" id="label-box--0" ></label>
+              </div>
+              <%= f.fields_for :images do |image| %>
+                <div class="js-file_group">
+                  <label class="image_input_btn" for="post_images_attributes_0_url">Beforeの画像を選択</label>
+                  <%= image.file_field :url, class: 'hidden-field' %>
+                  <label class="image_input_btn" for="post_images_attributes_2_url">Afterの画像を選択</label>
+                  <input class="hidden-field" id="post_images_attributes_2_url" name="post[images_attributes][2][url]" type="file">
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <h5 class="title-weight">カラーリングの説明</h5>
+          <p class="small">使用した薬剤や比率など</p>
+          <div class="form-group">
+            <%= f.text_area :content, class: 'form-control', placeholder: 'カラーリングの詳細を入力してくだい。' %>
+          </div>
+          <div class="posts_under-bt">
+            <%= f.submit '投稿する', class: 'btn btn-posts btn-block' %>
+          </div>
+        <% end %>
+      </section>
+    </div>
 </div>
-<%= f.submit %>
-<% end %>

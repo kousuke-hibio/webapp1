@@ -1,0 +1,75 @@
+.main {
+  background-color: #fff;
+  border: 1px solid #f6f6f6;
+  border-bottom: 3px solid #e8e8e8;
+  text-align: center;
+  padding: 30px;
+}
+.main_block {
+  text-align: left;
+}
+.title-weight {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+.posts_form {
+  margin-left: 20vh;
+  margin-right: 20vh;
+  padding: 15px;
+}
+.sell__block__head {
+  color: #6796de;
+  font-weight: 600;
+}
+.small {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+#image-box {
+  background: #f4f8fa;
+  //padding: 20px 20px 20px 55px;
+  border-radius: 4px;
+  justify-content: center;
+}
+.js-file_group {
+  text-align: center;
+  margin-top: 70px;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-evenly;
+}
+textarea[name="post[content]"] {
+  height: 290px;
+}
+.btn-posts {
+  background-color: #6796de;
+  color: #fff;
+  height: 60px;
+  font-weight: 600;
+  font-size: 25px;
+}
+.posts_under-bt {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+.btn-posts:hover {
+  color: #fff;
+}
+.image_input_btn{
+  background-color: #a3a3a3;
+  width: 180px;
+  height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 4px;
+  padding-top: 2px;
+  color:#fff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.hidden-field{
+  display: none;
+}

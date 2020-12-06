@@ -1,3 +1,83 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 75px;
+  padding: 30px 20px 0;
+}
+.user-count {
+  display: flex;
+  list-style: none;
+}
+.span-data {
+  margin-right: 40px;
+  font-size: 18px;
+}
+.user-name {
+  margin-left: 40px;
+}
+.section-content {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  left: 23vw;
+}
+.user-dm {
+  display: flex;
+  margin-bottom: 15px;
+}
+.message-button {
+  width:150px;
+  height:30px;
+  text-align:center;
+  display:inline-block;
+  border: 1px solid #dbdbdb;
+  border-radius: 4px;
+  text-decoration:none;
+  font-weight: 600;
+  background-color: white;
+  color: #262626;
+  margin-left: 40px;
+}
+nav {
+  background-color: #6796de;
+}
+.follow-bt {
+  margin-left: 10px;
+}
+.cps {
+  font-weight: 600;
+}
+.c-posts {
+  border-top: 1px solid #dbdbdb;
+  display: flex;
+  justify-content: center;
+  color: #8e8e8e;
+  height: 40px;
+}
+.posts-tag {
+  margin-right: 60px;
+  color: #8e8e8e;
+  border-top: 1px solid #262626;
+  padding-top: 7px;
+}
+.posts-favorite {
+  color: #8e8e8e;
+  border-top: 1px solid #262626;
+  padding-top: 7px;
+}
+a:hover {
+  text-decoration: none;
+}
+.count-btn {
+  color: black;
+}
+.posts-tag:hover {
+  color: #8e8e8e;
+}
+.posts-favorite:hover {
+  color: #8e8e8e;
+}
