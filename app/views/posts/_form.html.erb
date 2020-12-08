@@ -3,12 +3,18 @@
     <div class="main">
       <section class="main_block">
         <%= form_for @post do |f| %>
-          <h5 class="title-weight">タイトル</h5>
+          <div class="title-flex">
+            <h5 class="title-weight">タイトル</h5>
+            <span class="mandatory badge badge-danger">必須</span>
+          </div>
           <p class="small">タイトルを入力してください(5文字以上20文字以内)</p>
           <div class="form-group">
             <%= f.text_field :title, placeholder: '例: ミルクティーベージュ', class: 'form-control' %>
           </div>
-          <h5 class="title-weight">ヘアカラーの画像</h5>
+          <div class="title-flex">
+            <h5 class="title-weight">ヘアカラーの画像</h5>
+            <span class="mandatory badge badge-danger">必須</span>
+          </div>
           <p class="small">ヘアカラーのBefore/After</p>
           <div class="upload">
             <div id="image-box">
@@ -26,7 +32,10 @@
               <% end %>
             </div>
           </div>
-          <h5 class="title-weight">カラーリングの説明</h5>
+          <div class="title-flex">
+            <h5 class="title-weight">カラーリングの説明</h5>
+            <span class="mandatory badge badge-danger">必須</span>
+          </div>
           <p class="small">使用した薬剤や比率など</p>
           <div class="form-group">
             <%= f.text_area :content, class: 'form-control', placeholder: 'カラーリングの詳細を入力してくだい。' %>

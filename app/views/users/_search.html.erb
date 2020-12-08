@@ -1,0 +1,6 @@
+<%= form_tag(search_users_path, :method => 'get') do %>
+    <%= select_tag(:option, options_for_select([["ユーザー", "1"],["投稿","2"]]))%>
+    <%= text_field_tag :search, '', placeholder: 'フリーワードを入力' %>
+    <%= submit_tag 'Search', class: 'search_btn' %>
+<% end %>
+<i class="fas fa-search"></i>

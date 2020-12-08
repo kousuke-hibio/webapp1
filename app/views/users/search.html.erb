@@ -1,33 +1,58 @@
-<%= form_tag(search_users_path, :method => 'get') do %>
-    <%= select_tag(:option, options_for_select([["user", "1"],["post","2"]]))%>
-    <%= text_field_tag :search %>
-    <%= submit_tag 'Search' %>
-<% end %>
+<div class="search_list">
+  <% if @user_or_post == "1" %>
+    <h2 class="search_text">ユーザーを探す</h2>
+      <h5 class="search_font">ユーザー一覧</h5>
+        <p class="list-box">1人のユーザーが見つかりました。</p>
+        <% @users.each do |user| %>
+          <ul class="list-group">
+            <div class="list_main">
+              <li class="list-group-item list-content">
+                <div class="icon_user"><i class="far fa-user-circle fa-5x"></i></div>
+                  <div class="list_body">
+                    <p class="badge badge-info" style="margin-bottom: 0;">タグ</p>
+                    <p class="badge badge-info" style="margin-left: 5px; margin-bottom: 0;">タグ</p>
+                    <p class="badge badge-info" style="margin-left: 5px; margin-bottom: 0;">タグ</p>
+                    <div class="search_style">
+                      <a href="/users/<%= user.id %>" id="a_tag_ft"><%= user.name %></a>
+                    </div>
+                    <div class="search-count">
+                      <p>投稿数: <%= user.posts.count %></p>
+                      <p class="followers_counts">フォロワー数: <%= user.followers.count %></p>
+                    </div>
+                  </div>
+              </li>
+            </div>
+          </ul>
+        <% end %>
 
-<% if @user_or_post == "1" %>
-  <h1>User</h1>
-    <table>
-      <% @users.each do |user| %>
-      <thead>
-        <tr>
-          <th></th>
-          <th><a href="/users/<%= user.id %>"><%= user.name %></a></th>
-        </tr>
-      </thead>
-      <% end %>
-    </table>
-
-<% elsif @user_or_post == "2" %>
-  <h2>Post</h2>
-    <table>
-      <% @posts.each do |post| %>
-      <thead>
-        <tr>
-          <th></th>
-          <th><a href="/posts/<%= post.id %>"><%= post.title %></a></th>
-        </tr>
-      </thead>
-      <% end %>
-    </table>
-<% else %>
-<% end %>
+  <% elsif @user_or_post == "2" %>
+    <h2 class="search_text">投稿を探す</h2>
+      <h5 class="search_font">投稿一覧</h5>
+        <p class="list-box">1件の投稿がみつかりました。</p>
+        <% @posts.each do |post| %>
+          <ul class="list-group">
+            <div class="list_main">
+              <li class="list-group-item list-content">
+                <div class="icon_user"><i class="far fa-user-circle fa-5x"></i></div>
+                  <div class="list_body">
+                    <div class="list_posts">
+                      <a href="/posts/<%= post.id %>" id="post_title"><%= post.title %></a>
+                    </div>
+                    <p class="badge badge-info" style="margin-bottom: 0;">タグ</p>
+                    <p class="badge badge-info" style="margin-left: 5px; margin-bottom: 0;">タグ</p>
+                    <p class="badge badge-info" style="margin-left: 5px; margin-bottom: 0;">タグ</p>
+                    <div class="search_text_ct">
+                      <% post.images.each_with_index do |image,i| %>
+                        <% if i == 1 %>
+                          <%= image_tag image.url.url, height: "430", width: "345", class: "img_rd" %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </div>
+              </li>
+            </div>
+          </ul>
+        <% end %>
+  <% else %>
+  <% end %>
+</div>

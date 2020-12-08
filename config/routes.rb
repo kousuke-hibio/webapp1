@@ -24,13 +24,14 @@ Rails.application.routes.draw do
       get :followers
     end 
     collection do
-      get 'search'
+      get :search
     end 
     member do 
       get :likes
     end
   end 
 
+  get 'postup', to: 'posts#new'
   resources :posts do
     resources :comments, only: [:create]
   end 
