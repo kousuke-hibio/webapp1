@@ -13,8 +13,8 @@
             </div>
               <ul class="user-count">
                 <li class="span-data"><span>投稿 <span class="cps"><%= @count_posts %></span>件</span></li>
-                <li class="span-data"><a href="<%= followings_user_path(@user) %>" <%= 'active' if current_page?(followings_user_path(@user)) %>><span class="count-btn">フォロワー <span class="cps"><%= @count_followers %></span>人</span></a></li>
-                <li class="span-data"><a href="<%= followers_user_path(@user) %>" <%= 'active' if current_page?(followers_user_path(@user)) %>><span class="count-btn">フォロー <span class="cps"><%= @count_followings %></span>人</span></a></li>
+                <li class="span-data"><a href="<%= followers_user_path(@user) %>" <%= 'active' if current_page?(followers_user_path(@user)) %>><span class="count-btn">フォロワー <span class="cps"><%= @count_followers %></span>人</span></a></li>
+                <li class="span-data"><a href="<%= followings_user_path(@user) %>" <%= 'active' if current_page?(followings_user_path(@user)) %>><span class="count-btn">フォロー <span class="cps"><%= @count_followings %></span>人</span></a></li>
               </ul>
           </section>
         </div>

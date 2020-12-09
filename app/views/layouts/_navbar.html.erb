@@ -6,9 +6,9 @@
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-    <%= render 'users/search' %>
       <ul class="navbar-nav">
         <% if logged_in? %>
+        <%= render 'users/search' %>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">

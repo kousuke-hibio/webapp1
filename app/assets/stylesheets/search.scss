@@ -10,9 +10,10 @@
 }
 .fa-search {
   position: absolute;
-  right: 125px;
+  right: 120px;
   color: #999;
   font-size: 13px;
+  top: 18px;
 }
 .search_btn {
   display: none;
@@ -39,9 +40,6 @@
   font-weight: 600;
   margin-bottom: 10px;
 }
-.list-box {
-  //margin-bottom: 20px;
-}
 .list-content {
   padding: 20px 20px;
   margin-top: 20px;
@@ -66,11 +64,10 @@
 #a_tag_ft {
   color: #4f5050;
 }
-.search_text_ct {
-
-}
-#post_title {
-  color: #6796de;
+#post_ttl {
+  color: #4f5050;
+  font-size: 25px;
+  font-weight: 700;
 }
 .list_posts {
   font-weight: 700;

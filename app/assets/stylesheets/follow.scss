@@ -1,0 +1,41 @@
+.user_stl {
+  display: flex;
+  width: 420px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+.user_bx {
+  border-bottom: 1px solid #e9ecef;
+}
+.li_main {
+  border-radius: 20px;
+}
+.user-body {
+  margin-left: 15px;
+  margin-right: 105px;
+}
+#user_nm {
+  font-size: 18px;
+  font-weight: 600;
+}
+#user_fw_btn {
+  margin-top: 14px;
+}
+#view_pf {
+  color: #8e8e8e;
+  font-weight: 400;
+}
+#user_unfw_btn {
+  margin-top: 14px;
+  color: #262626;
+  border: 1px solid rgba(var(--ca6,219,219,219),1);
+  background-color: #fff;
+  font-weight: 600;
+}
+.btn_unfw {
+  color: #262626;
+  border: 1px solid rgba(var(--ca6,219,219,219),1);
+  background-color: #fff;
+  font-weight: 600;
+}

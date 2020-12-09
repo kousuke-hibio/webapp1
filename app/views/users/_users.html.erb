@@ -1,14 +1,31 @@
 <% if users.any? %>
-  <ul class="list-unstyled">
+  <ul class="list-unstyled card li_main">
     <% users.each do |user| %>
-      <li class="media">
-        <div class="media-body">
-          <div>
-            <%= user.name %>
+      <li class="user_bx">
+        <div class="media-body user_stl">
+          <i class="far fa-user-circle fa-3x"></i>
+          <div class="user-body">
+            <div id="user_nm">
+              <%= user.name %>
+            </div>
+            <div>
+              <p><%= link_to 'View Profile', user_path(user), id: "view_pf" %></p>
+            </div>
           </div>
-          <div>
-            <p><%= link_to 'View Profile', user_path(user) %></p>
-          </div>
+          <% unless current_user == user %>
+            <% if current_user.following?(user) %>
+              <%= form_with(model: current_user.relationships.find_by(follow_id: user.id), local: true, method: :delete) do |f| %>
+                <%= hidden_field_tag :follow_id, user.id %>
+                <%= f.submit 'フォロー中', class: 'btn btn-danger btn-block btn-sm', id: "user_unfw_btn" %>
+              <% end %>
+            <% else %>
+              <%= form_with(model: current_user.relationships.build, local: true) do |f| %>
+                <%= hidden_field_tag :follow_id, user.id %>
+                <%= f.submit 'フォローをする', class: 'btn btn-primary btn-block btn-sm', id: "user_fw_btn" %>
+              <% end %>
+            <% end %>
+          <% end %>
+
         </div>
       </li>
     <% end %>
