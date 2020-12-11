@@ -1,9 +1,17 @@
-<div class="content">
-  <p><a href="/posts/<%= post.id %>"><%= post.title %></a></p>
-  <p><%= post.content %></p>
-  <% post.images.each do |image| %>
-    <%= image_tag image.url.url %>
-  <% end %>
+<div class="contents_top">
+  <ul id="top_main">
+    <li class="card mb-3 post_li">
+      <div class="card-body">
+        <div class="card-title">
+          <h5><%= link_to post.user.name, user_path(post.user) %></h5>
+          <span class="text-muted"> posted at <%= post.created_at %></span>
+        </div>
+        <p style="text-align: left;"><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
+        <% post.images.each do |image| %>
+          <%= image_tag image.url.url, :size =>'293x350' %>
+        <% end %>
+        <%= link_to '削除', post_path(post), method: :delete, id:"delete_post" %>
+      </div>
+    </li>
+  </ul>
 </div>
-
-<%= link_to '削除', post_path(post), method: :delete %>

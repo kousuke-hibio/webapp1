@@ -37,3 +37,117 @@ body {
 .list-group {
   border-bottom: 3px solid #e8e8e8;
 }
+.tppag_cd {
+  border-radius: 20px;
+}
+.top_img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#top_main {
+  display: inline-block;
+  margin-bottom: -35px;
+  position: relative;
+  padding-left: 75px;
+}
+.contents_top {
+  //text-align: center;
+}
+#delete_post {
+  display: block;
+  text-align: left;
+}
+.alert {
+  margin-bottom: 0px;
+}
+.post_box {
+  margin-right: 30px;
+}
+.top_main_ft {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #6796de;
+}
+.post_li {
+  border-radius: 20px;
+}
+.top_main_content {
+  position: absolute;
+  top: 60px;
+  left: 900px;
+  height: 580px;
+  width: 355px;
+  border-radius: 20px;
+  position: fixed;
+}
+.font__user {
+  padding-top: 8px;
+  padding-left: 17px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.top_user {
+  display: flex;
+  position: relative;
+  padding: 25px;
+}
+#user__path {
+  position: absolute;
+  top: 56px;
+  left: 105px;
+}
+.view_pf {
+  color: #8e8e8e;
+  font-weight: 400;
+}
+.view_pf:hover {
+  color: #8e8e8e;
+}
+.list__title {
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 20px;
+  color: #8e8e8e;
+  padding-bottom: 15px;
+}
+.list__ct {
+  list-style: none;
+  padding-left: 20px;
+}
+.list__view {
+  display: flex;
+}
+.view__ct {
+  //padding-right: 105px;
+}
+#ranks_list {
+  height: 98px;
+  padding-top: 10px;
+}
+.profile_ct {
+  display: flex;
+  margin-right: 70px;
+}
+.top_user_name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+  padding-left: 10px;
+}
+.user__name {
+  margin-top: -4px;
+}
+.view__user {
+  font-size: 14px;
+  font-weight: 400;
+  color: #8e8e8e;
+}
+.view__ct {
+  padding-left: 10px;
+  margin-top: -6px;
+}
+#header_nav {
+  //position: fixed;
+  //width: 100%;
+  //z-index: 20;
+}

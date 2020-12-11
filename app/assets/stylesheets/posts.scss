@@ -13,6 +13,11 @@
   margin: 26px;
   border-bottom: 3px solid #e8e8e8;
 }
+.posts-main {
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 20px;
+}
 .card-title {
   display: flex;
 }
@@ -37,12 +42,13 @@
 }
 .big-img {
   margin-left: 25px;
-  height: 640px;
-  width: 555px;
+  height: 600px;
+  width: 500px;
+  border-radius: 20px;
 }
 .posts-under {
-  margin-left: 7vw;
-  margin-right: 6vw;
+  margin-left: 100px;
+  margin-right: 77px;
 }
 .favorite-posts {
   font-weight: 600;
@@ -79,11 +85,10 @@
 .posts_title {
   font-weight: 700;
   font-size: 19px;
-  color: rgb(15, 20, 25);
+  color: #8e8e8e;
 }
 .posts_title:hover {
-  text-decoration: underline;
-  color: rgb(15, 20, 25);
+ color: #8e8e8e; 
 }
 .prev-content {
   display: flex;

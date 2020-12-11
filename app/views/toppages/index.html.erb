@@ -1,5 +1,43 @@
 <% if logged_in? %>
-  <div class="container-fulid">
+  <div class="top_main_content card">
+    <div class="top_user">
+      <i class="far fa-user-circle fa-4x"></i>
+      <div class="font__user">
+        <%= @post.user.name %>
+      </div>
+    </div>
+    <div id="user__path">
+      <%= link_to 'my profile', user_path(current_user), class: 'view_pf' %>
+    </div>
+    <div class="list__title">
+      おすすめ
+    </div>
+    <% @rank.each_with_index do |user| %>
+      <div id="ranks_list">
+        <ul class="list__ct">
+          <li class="list__view">
+            <div class="profile_ct">
+              <i class="far fa-user-circle fa-2x"></i>
+              <div class="user__name">
+                <span>
+                  <a href="/users/<%= user.id %>" class="top_user_name"><%= user.name %></a>
+                </span>
+                <div class="view__ct">
+                  <%= link_to 'View Profile', user_path(user), class: 'view__user' %>
+                </div>
+              </div>
+            </div>
+            <div class="list__btn">
+              <a href="#" class="btn btn-arrival">フォローする</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+  <%= render @posts %>
+<% else %>
+<div class="container-fulid">
     <div class="row">
       <div class="col topImage position-relative">
         <div class="topImage__inContent position-absolute">
@@ -37,10 +75,10 @@
     <div class="row px-4">
       <% @posts.each do |post| %>
         <div class="col-lg-4 p-4">
-          <div class="card">
+          <div class="card tppag_cd">
             <% post.images.each_with_index do |image,i| %>
               <% if i == 1 %>
-                <%= image_tag image.url.url, height: "430" %>
+                <%= image_tag image.url.url, height: "430", class: "top_img" %>
               <% end %>
             <% end %>
             <div class="card-body">
@@ -62,8 +100,8 @@
     <div class="row px-4">
       <% @ranks.each_with_index do |user| %>
         <div class="col-lg-4 p-4">
-          <ul class="list-group">
-            <li class="list-group-item">
+          <ul class="list-group" style="border-radius: 20px;">
+            <li class="list-group-item" style="border-radius: 20px;">
               <i class="fas fa-user-circle"></i>
               <a href="/users/<%= user.id %>"><%= user.name %></a>
               <p>投稿数: <%= user.posts.count %></p>
@@ -78,11 +116,4 @@
       <% end %>
     </div>
   </div>
-<% else %>
-<div class="center jumbotron">
-  <div class="text-center">
-    <h1>Hello World</h1>
-    <%= link_to 'Sign up now', signup_path, class: 'btn btn-lg btn-primary' %>
-  </div>
-</div>
 <% end %>
