@@ -73,12 +73,13 @@ body {
 }
 .top_main_content {
   position: absolute;
-  top: 60px;
+  top: 57px;
   left: 900px;
-  height: 580px;
+  height: 565px;
   width: 355px;
   border-radius: 20px;
   position: fixed;
+  margin-top: 31px;
 }
 .font__user {
   padding-top: 8px;
@@ -147,7 +148,28 @@ body {
   margin-top: -6px;
 }
 #header_nav {
-  //position: fixed;
-  //width: 100%;
-  //z-index: 20;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+}
+.alert {
+  //margin-top: 55px;
+  //height: 60px;
+  //padding: 18px;
+}
+.log_in {
+  //margin-top: 85px;
+}
+.page-footer {
+  margin-top: 50px;
+}
+#top_main {
+  //margin-top: 58px;
+}
+.container-fluid {
+  margin-top: 56px;
+}
+.row_cl {
+  margin-left: 0;
 }

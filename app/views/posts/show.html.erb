@@ -24,8 +24,14 @@
               <li><%= user.email %></li>
             <% end %>
           </div>
-            <%= @post.title %><br>
-            <%= @post.content %><br>
+          <div class="posts-under_ct">
+            <div class="post_title_ct">
+              <%= @post.title %>
+            </div>
+            <div class="post_content_ct">
+              <%= @post.content %>
+            </div>
+          </div>
             <h4 class="comment-btn">コメント一覧</h4>
           <% @comments.each do |c| %>
             <div>
