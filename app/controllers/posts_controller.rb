@@ -45,7 +45,6 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:success] = '投稿を削除しました。'
     redirect_back(fallback_location: root_path)
   end
 
