@@ -1,24 +1,40 @@
-<div class="contents_top">
-  <ul id="top_main">
-    <% posts.each do |post| %>
-      <li class="card mb-3 post_li">
-        <div class="card-body">
-          <div class="card-title">
-            <h5 id="h5_font"><%= link_to post.user.name, user_path(post.user), class: "font_li" %></h5>
-            <span class="text-muted"> posted at <%= post.created_at %></span>
+<% if posts.present? %>
+  <div class="contents_top">
+    <ul id="top_main">
+      <% posts.each do |post| %>
+        <li class="card mb-3 post_li">
+          <div class="card-body">
+            <div class="card-title">
+              <h5 id="h5_font"><%= link_to post.user.name, user_path(post.user), class: "font_li" %></h5>
+              <span class="text-muted"> posted at <%= post.created_at %></span>
+            </div>
+            <p style="text-align: left;"><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
+            <% post.images.each do |image| %>
+              <%= image_tag image.url.url, :size =>'293x350' %>
+            <% end %>
+            <% if current_user == post.user %>
+              <button id="delete__btn">
+                <i class="far fa-trash-alt"></i>
+                <%= link_to 'Delete', post_path(post), method: :delete, id:"delete__post", data: { confirm: "削除します。よろしいですか？" } %>
+              </button>
+            <% end %>
           </div>
-          <p style="text-align: left;"><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
-          <% post.images.each do |image| %>
-            <%= image_tag image.url.url, :size =>'293x350' %>
-          <% end %>
-          <% if current_user == post.user %>
-            <button id="delete__btn">
-              <i class="far fa-trash-alt"></i>
-              <%= link_to 'Delete', post_path(post), method: :delete, id:"delete__post", data: { confirm: "削除します。よろしいですか？" } %>
-            </button>
-          <% end %>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% else %>
+  <div class="card mb-3 post_present">
+    <div class="card-body">
+      <div class="card-title index__title">
+        <i class="far fa-images fa-8x"></i>
+      </div>
+      <div class="top__index">
+        <h4 style="font-weight: 600;">フォローしたユーザの投稿や自分の投稿が表示されます。</h4>
+      </div>
+      <div class="top__btn">
+        <%= link_to 'プロフィールを確認する', user_path(current_user), class: 'btn btn-arrival' %>
+      </div>
+    </div>
+  </div>
+<% end %>

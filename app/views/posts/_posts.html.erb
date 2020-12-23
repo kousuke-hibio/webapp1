@@ -1,28 +1,68 @@
-<ul class="posts-content post_box">
-  <% posts.each do |post| %>
-    <li class="card mb-3 posts__li">
-      <div class="card-body">
-        <div class="card-title">
-          <h5 id="h5_font"><%= link_to post.user.name, user_path(post.user), class: "font_li" %></h5><span class="text-muted"> posted at <%= post.created_at %></span>
+<% if posts.present? %>
+  <ul class="posts-content post_box">
+    <% posts.each do |post| %>
+      <li class="card mb-3 posts__li">
+        <div class="card-body">
+          <div class="card-title">
+            <h5 id="h5_font"><%= link_to post.user.name, user_path(post.user), class: "font_li" %></h5><span class="text-muted"> posted at <%= post.created_at %></span>
+          </div>
+          <div>
+            <p><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
+          </div>
+          <div>
+            <% post.images.each do |image| %>
+              <%= image_tag image.url.url, :size =>'293x350', class: 'img-border' %>
+            <% end %>
+          </div>
+          <div>
+            <% if current_user == post.user %>
+              <button id="delete__btn">
+                <i class="far fa-trash-alt"></i>
+                <%= link_to 'Delete', post, method: :delete, id:"delete__post", data: { confirm: "削除します。よろしいですか？" } %>
+              </button>
+            <% end %>
+          </div>
         </div>
-        <div>
-          <p><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
-        </div>
-        <div>
-          <% post.images.each do |image| %>
-            <%= image_tag image.url.url, :size =>'293x350', class: 'img-border' %>
-          <% end %>
-        </div>
-        <div>
-          <% if current_user == post.user %>
-            <button id="delete__btn">
-              <i class="far fa-trash-alt"></i>
-              <%= link_to 'Delete', post, method: :delete, id:"delete__post", data: { confirm: "削除します。よろしいですか？" } %>
-            </button>
-          <% end %>
-        </div>
+      </li>
+    <% end %>
+    <%= paginate posts %>
+  </ul>
+<% elsif current_page?(user_path(@user)) %>
+  <div class="card mb-3 posts__img">
+    <div class="card-body">
+      <div class="card-title ctl">
+        <i class="far fa-image fa-6x"></i>
       </div>
-   </li>
- <% end %>
- <%= paginate posts %>
-</ul>
+      <div>
+        <h4 style="font-weight: 600;">投稿がありません。</h4>
+      </div>
+      <div>
+        <p style="color: #8e8e8e;">投稿をするとここに表示されます。</p>
+      </div>
+      <div>
+        <% if current_user == @user %>
+          <%= link_to '投稿をする', postup_path, class: "btn btn-arrival" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="card mb-3 posts__img">
+    <div class="card-body">
+      <div class="card-title ctl">
+        <i class="far fa-image fa-6x"></i>
+      </div>
+      <div>
+        <h4 style="font-weight: 600;">いいねがありません。</h4>
+      </div>
+      <div>
+        <p style="color: #8e8e8e;">いいねを押すとここに表示されます。</p>
+      </div>
+      <div>
+        <% if current_user == @user %>
+          <%= link_to '投稿を見る', toppages_index_path, class: "btn btn-arrival" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
