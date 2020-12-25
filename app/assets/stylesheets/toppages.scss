@@ -27,6 +27,12 @@
   margin-top: 100px;
   cursor: pointer;
 }
+.top__nav {
+  color: #ffffff;
+}
+.top__nav:hover {
+  color: #ffffff;
+}
 body {
   background-color: rgba(var(--b3f,250,250,250),1);
 }
@@ -73,7 +79,7 @@ body {
 }
 .top_main_content {
   position: absolute;
-  top: 57px;
+  top: 100px;
   left: 900px;
   height: 565px;
   width: 355px;
@@ -193,4 +199,38 @@ body {
 }
 .btn-arrival:hover {
   color: #ffffff;
+}
+.top_h4 {
+  text-decoration: underline;
+}
+.ranks_user {
+  font-size: 23px;
+  color: #262626;
+  font-weight: 600;
+}
+.rank_ct {
+  display: flex;
+}
+.rank_item {
+  margin-left: 10px;
+}
+.rank_div {
+  display: flex;
+  margin-top: 10px;
+}
+.rank_index {
+  padding-top: 15px;
+}
+.fa-user-circle {
+  margin-top: 12px;
+}
+.rank_post {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5px;
+
+}
+.rank_p {
+  font-size: 18px;
+  font-weight: 500;
 }

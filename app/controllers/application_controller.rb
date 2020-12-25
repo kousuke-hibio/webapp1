@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+  before_action :store_location
+
+  def store_location
+    session[:return_to] = request.url
+  end 
 
   include SessionsHelper
 

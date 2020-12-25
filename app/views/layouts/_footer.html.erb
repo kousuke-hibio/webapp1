@@ -10,7 +10,11 @@
         <h5 class="mb-1">Register for free</h5>
       </li>
       <li class="list-inline-item">
-        <a href="#" class="btn btn--color btn--radius">Sign up!</a>
+        <% if logged_in? %>
+          <%= link_to 'Log out', logout_path, method: :delete, class: 'btn btn--color btn--radius' %>
+        <% else %>
+          <%= link_to 'Sign up!', signup_path, class: 'btn btn--color btn--radius' %>
+        <% end %>
       </li>
     </ul>
     
@@ -18,7 +22,7 @@
   </div>
 
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="#"> Reproduce the color </a>
+    <a href="/"> Reproduce the color </a>
   </div>
 
 </footer>

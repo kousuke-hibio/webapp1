@@ -1,14 +1,14 @@
 <header id="header_nav">
   <nav class="navbar navbar-expand-sm navbar-dark">
     <a class="navbar-brand" href="/">Reproduce the color</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarSupportedContent">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if logged_in? %>
-        <%= render 'users/search' %>
+          <%= render 'users/search' %>
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">

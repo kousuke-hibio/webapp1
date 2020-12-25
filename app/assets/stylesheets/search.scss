@@ -15,6 +15,7 @@
   color: #999;
   font-size: 13px;
   top: 20px;
+  right: 160px;
 }
 .search_btn {
   display: none;
@@ -78,4 +79,8 @@
   border-radius: 20px;
   border: 1px solid #f6f6f6;
   margin-top: 10px;
+}
+.search_form {
+  position: fixed;
+  right: 140px;
 }

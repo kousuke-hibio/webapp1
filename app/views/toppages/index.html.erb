@@ -72,16 +72,16 @@
             </div>
           </div>
             <div class="topImage__inContent--div text-center">
-              ユーザー登録
+              <%= link_to 'ユーザー登録', signup_path, class: 'top__nav' %>
             </div>
           </div>
       </div>
     </div>
     <div class="row">
       <div class="col text-center p-4">
-        <u class="font-weight-bold">
+        <h4 class="font-weight-bold top_h4">
           新着投稿
-        </u>
+        </h4>
       </div>
     </div>
     <div class="row px-4">
@@ -104,24 +104,35 @@
     </div>
     <div class="row">
       <div class="col text-center p-4">
-        <u class="font-weight-bold">
+        <h4 class="font-weight-bold top_h4">
           人気ユーザ一覧
-        </u>
+        </h4>
       </div>
     </div>
     <div class="row px-4">
       <% @ranks.each_with_index do |user| %>
         <div class="col-lg-4 p-4">
           <ul class="list-group" style="border-radius: 20px;">
-            <li class="list-group-item" style="border-radius: 20px;">
-              <i class="fas fa-user-circle"></i>
-              <a href="/users/<%= user.id %>"><%= user.name %></a>
-              <p>投稿数: <%= user.posts.count %></p>
-              <p>フォロワー数: <%= user.followers.count %></p>
-              <p class="badge badge-info">タグ</p>
-              <p class="badge badge-info">タグ</p>
-              <p class="badge badge-info">タグ</p>
-              <a href="#" class="btn btn-arrival">フォローする</a>
+            <li class="list-group-item" style="border-radius: 20px;height: 215px;">
+              <div class="rank_ct">
+                <div>
+                  <i class="fas fa-user-circle fa-4x"></i>
+                </div>
+                <div class="rank_item">
+                  <div class="rank_index">
+                    <a href="/users/<%= user.id %>" class="ranks_user"><%= user.name %></a>
+                  </div>
+                  <div class="rank_div">
+                    <p class="rank_p">投稿数: <div class="rank_post"><%= user.posts.count %></div></p>
+                    <p style="margin-left: 20px;" class="rank_p">フォロワー数: <div class="rank_post"><%= user.followers.count %></div></p>
+                  </div>
+                  <p class="badge badge-info">タグ</p>
+                  <p class="badge badge-info">タグ</p>
+                  <p class="badge badge-info">タグ</p>
+                  <p class="badge badge-info">タグ</p>
+                  <%= link_to 'プロフィールを見る', user_path(user), class: 'btn btn-arrival' %>
+                </div>
+              </div>
             </li>
           </ul>
         </div>

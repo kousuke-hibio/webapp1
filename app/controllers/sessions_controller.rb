@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
-  def new
+  skip_before_action :store_location
+  
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
   end
 
   def create
@@ -7,7 +11,7 @@ class SessionsController < ApplicationController
     password = params[:session][:password]
     if login(email, password)
       flash[:success] = 'ログインに成功しました。'
-      redirect_to @user
+      redirect_back_or root_url
     else
       flash.now[:danger] = 'ログインに失敗しました。'
       render :new
