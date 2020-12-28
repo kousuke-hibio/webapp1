@@ -1,24 +1,75 @@
-# README
+# Reprodcue the color
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+美容師専用のカラーの再現率を上げるアプリです。
 
-* Ruby version
+##　制作背景
 
-* System dependencies
+美容師にとってカラーの再現率を上げることは重要な課題です。
 
-* Configuration
+その為には、薬剤の選定や調合比率に対して多くの知識がないと難しいです。
 
-* Database creation
+実践を積むと同時に他の美容師の方達がどのようにして選定や比率を選んでいるのかをアプリを通してより多くの知識を得られると再現率が高くなると思いこのアプリを制作しました。
 
-* Database initialization
+## 機能
 
-* How to run the test suite
+* 画像複数投稿機能
 
-* Services (job queues, cache servers, search engines, etc.)
+* 画像プレビュー機能
 
-* Deployment instructions
+* コメント機能
 
-* ...
+* 投稿削除機能
+
+* お気に入り機能
+
+* コメント機能
+
+* ログイン機能
+
+* フォロー/フォロワー機能
+
+* 検索機能
+
+## 使用技術
+
+**言語**
+
+* HTML5
+
+* CSS3
+
+* javascript(jQuery)
+
+* Ruby
+
+**フレームワーク**
+
+* Ruby on Rails
+
+**ミドルウェア**
+
+* Mysql
+
+* Nginx
+
+**インフラ(その他)**
+
+* AWS (Capistranoによる自動デプロイ化)
+
+* Route53
+
+* EC2
+
+* バージョン管理: Git
+
+**工夫したポイント**
+
+* 初めて利用する方でも分かりやすいようにユーザーファーストな配置にしたところです。
+
+* おすすめユーザーや新着投稿一覧の表示により登録したばかりでも多くの投稿を見れるようにしました。
+
+**App URL**
+
+* テストユーザーで誰でも登録なしでログインできます。
