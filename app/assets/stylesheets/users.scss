@@ -4,7 +4,7 @@
 .user-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 75px;
+  margin-bottom: 65px;
   padding: 30px 20px 0;
 }
 .user-count {
@@ -23,7 +23,8 @@
 }
 .icon {
   position: absolute;
-  left: 23vw;
+  left: 310px;
+  top: 79px;
 }
 .user-dm {
   display: flex;
@@ -80,4 +81,82 @@ a:hover {
 }
 .posts-favorite:hover {
   color: #8e8e8e;
+}
+.preview {
+  width: 165px;
+  height: 165px;
+  border-radius: 100px;
+  border: solid #e8e8e8;
+  position: absolute;
+  top: -160px;
+  right: 298px;
+}
+.icon__img {
+  width: 165px;
+  height: 165px;
+  border-radius: 100px;
+  border: solid #e8e8e8;
+}
+.icon__prf {
+  margin-left: 41px;
+  margin-top: 5px;
+}
+.account-page__inner--icon {
+  text-align: center;
+}
+.account-page__inner--icon__input__image2 {
+  position: relative;
+}
+#upload-icon {
+  width: 161px;
+  height: 161px;
+  border-radius: 100px;
+  position: absolute;
+  top: 35px;
+  opacity: 0;
+  cursor: pointer; 
+  right: 298px;
+}
+.account-page__inner--icon__input__image {
+  width: 160px;
+  height: 160px;
+  border-radius: 100px;
+  border: solid #e8e8e8;
+}
+.edit__icon {
+  margin-right: 340px;
+  margin-left: 340px;
+  border-radius: 20px;
+}
+.edit_title {
+  color: #6796de;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 475px;
+  margin-top: 20px;
+}
+.edit__form {
+  text-align: left;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+.edit__text {
+  height: 45px;
+  border-radius: 6px;
+}
+.submit_ebit {
+  margin-left: 90px;
+}
+.edit_user {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.icon___img {
+  border-radius: 100px;
+  border: solid #e8e8e8;
+  width: 63px;
+  height: 63px;
+}
+.size {
+  font-size: 9.5rem;
 }

@@ -2,7 +2,11 @@
     <aside>
       <div class="user-container">
         <div class="icon">
-        <i class="far fa-user-circle fa-7x"></i>
+          <% if @image.present? %>
+            <%= image_tag @image.url, class: 'icon__img' %>
+          <% else %>
+            <i class="far fa-user-circle size"></i>
+          <% end %>
         </div>
         <div class="user-contents">
           <section class="section-content">
@@ -16,6 +20,9 @@
                 <li class="span-data"><a href="<%= followers_user_path(@user) %>" <%= 'active' if current_page?(followers_user_path(@user)) %>><span class="count-btn">フォロワー <span class="cps"><%= @count_followers %></span>人</span></a></li>
                 <li class="span-data"><a href="<%= followings_user_path(@user) %>" <%= 'active' if current_page?(followings_user_path(@user)) %>><span class="count-btn">フォロー <span class="cps"><%= @count_followings %></span>人</span></a></li>
               </ul>
+              <% if current_user == @user %>
+                <%= link_to 'プロフィール写真を変更', edit_user_path(@user), class: 'btn btn-arrival icon__prf' %>
+              <% end %>
           </section>
         </div>
       </div>

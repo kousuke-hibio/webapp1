@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'users/show'
   get 'users/new'
   get 'users/create'
+  get 'users/edit'
+  post 'users/edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'toppages#index'
   
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:index, :show, :new, :create] do
+  resources :users do
     member do
       get :followings
       get :followers

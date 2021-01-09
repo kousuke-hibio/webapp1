@@ -1,7 +1,11 @@
 <% if logged_in? %>
   <div class="top_main_content card">
     <div class="top_user">
-      <i class="far fa-user-circle fa-4x"></i>
+      <% if @image.present? %>
+        <%= image_tag @image.url, class: 'icon___img' %>
+      <% else %>
+        <i class="far fa-user-circle fa-4x"></i>
+      <% end %>
       <div class="font__user">
         <%= @post.user.name %>
       </div>
@@ -17,7 +21,11 @@
         <ul class="list__ct">
           <li class="list__view">
             <div class="profile_ct">
-              <i class="far fa-user-circle fa-2x"></i>
+              <% if user.image.present? %>
+                <%= image_tag user.image.url, class: 'rank_img' %>
+              <% else %>
+                <i class="far fa-user-circle fa-2x"></i>
+              <% end %>
               <div class="user__name">
                 <span>
                   <a href="/users/<%= user.id %>" class="top_user_name"><%= user.name %></a>

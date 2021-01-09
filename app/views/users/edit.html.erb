@@ -1,0 +1,30 @@
+<div>
+  <h2 class="edit_title">プロフィールを編集</h2>
+</div>
+<div class="card mb-3 edit__icon">
+  <%= form_for(current_user) do |f| %>
+    <div class="account-page__inner--icon">
+      <div class="account-page__inner--icon__label"></div>
+      <%= f.fields_for :image, class: 'image' do %>
+        <div class="account-page__inner--icon__input">
+          <% if @image.present? %>
+            <%= image_tag @image.url, class: 'account-page__inner--icon__input__image', width: '100%' %>
+          <% else %>
+            <i class="far fa-user-circle fa-7x size"></i>
+          <% end %>
+          <div class="account-page__inner--icon__input__image2"></div>
+          <%= f.file_field :image, class: 'account-page__inner--icon__input__btn', id: 'upload-icon' %>
+          <div class="form-group edit__form">
+            <%= f.label :name, 'Name' %>
+            <%= f.text_field :name, class: 'form-control edit__text'%>
+          </div>
+          <div class="form-group edit__form">
+            <%= f.label :email, 'Email' %>
+            <%= f.email_field :email, class: 'form-control edit__text', placeholder: 'sample@softbank.jp' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <%= f.submit '完了する', class: 'submit_ebit btn btn-arrival' %>
+  <% end %>
+</div>

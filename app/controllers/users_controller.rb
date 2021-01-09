@@ -4,10 +4,25 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def edit
+    @user = User.find(params[:id])
+    @image = @user.image
+  end
+
   def show
     @user = User.find(params[:id])
+    @image = @user.image
     @posts = @user.posts.order(id: :desc).page(params[:page])
     counts(@user)
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if current_user.update(user_params)
+      redirect_to user_path
+    else
+      render :edit
+    end 
   end
 
   def new
@@ -19,7 +34,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = 'ユーザを登録しました。'
-      redirect_to @user 
+      redirect_to @user
     else
       flash.now[:danger] = 'ユーザの登録に失敗しました。'
       render :new 
@@ -28,12 +43,14 @@ class UsersController < ApplicationController
 
   def followings
     @user = User.find(params[:id])
+    @image = @user.image
     @followings = @user.followings.page(params[:page])
     counts(@user)
   end 
 
   def followers
     @user = User.find(params[:id])
+    @image = @user.image
     @followers = @user.followers.page(params[:page])
     counts(@user)
   end 
@@ -49,6 +66,7 @@ class UsersController < ApplicationController
 
   def likes
     @user = User.find(params[:id])
+    @image = @user.image
     @favorites = @user.favorite_posts.page(params[:page])
     counts(@user)
   end 
@@ -56,6 +74,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
   end 
 end

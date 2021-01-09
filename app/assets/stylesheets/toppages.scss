@@ -222,7 +222,7 @@ body {
   padding-top: 15px;
 }
 .fa-user-circle {
-  margin-top: 12px;
+  margin-top: 3px;
 }
 .rank_post {
   font-size: 18px;
@@ -233,4 +233,10 @@ body {
 .rank_p {
   font-size: 18px;
   font-weight: 500;
+}
+.rank_img {
+  border-radius: 100px;
+  border: solid #e8e8e8;
+  height: 38px;
+  width: 38px;
 }
