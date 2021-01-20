@@ -159,11 +159,23 @@ a:hover {
   font-size: 9.5rem;
 }
 .user-ct {
-  margin-top: 10px;
+  margin-top: 17px;
 }
 .user-contents {
   margin-top: 30px;
   margin-right: 65px;
+}
+.user_rank_img {
+  border-radius: 100px;
+  border: solid #e8e8e8;
+  height: 48px;
+  width: 48px;
+}
+.img__show {
+  border-radius: 100px;
+  width: 110px;
+  height: 110px;
+  border: solid #e8e8e8;
 }
 
 //レスポンシブ
@@ -303,5 +315,17 @@ a:hover {
   }
   .posts-box_ud {
     margin-bottom: 25px;
+  }
+  .user_rank_img {
+    border-radius: 100px;
+    border: solid #e8e8e8;
+    height: 48px;
+    width: 48px;
+  }
+  #view_pf {
+    font-size: 15px;
+  }
+  #user_nm {
+    font-size: 15px;
   }
 }
