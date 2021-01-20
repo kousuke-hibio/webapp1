@@ -50,6 +50,7 @@
 .icon_user {
   width: 110px;
   padding-top: 15px;
+  font-size: 28px;
 }
 .search-count {
   display: flex;
@@ -83,6 +84,12 @@
 .search_form {
   position: fixed;
   right: 140px;
+}
+.search_rank_img {
+  width: 83px;
+  height: 83px;
+  border-radius: 100px;
+  border: solid #e8e8e8;
 }
 
 //レスポンス

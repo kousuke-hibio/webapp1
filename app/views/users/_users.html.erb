@@ -3,7 +3,11 @@
     <% users.each do |user| %>
       <li class="user_bx">
         <div class="media-body user_stl">
-          <i class="far fa-user-circle fa-3x"></i>
+          <% if user.image.present? %>
+            <%= image_tag user.image.url, class: 'user_rank_img' %>
+          <% else %>
+            <i class="far fa-user-circle fa-3x"></i>
+          <% end %>
           <div class="user-body">
             <div id="user_nm">
               <%= user.name %>
