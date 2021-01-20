@@ -22,9 +22,7 @@
   position: relative;
 }
 .icon {
-  position: absolute;
-  left: 310px;
-  top: 79px;
+  margin-top: 5px;
 }
 .user-dm {
   display: flex;
@@ -159,4 +157,151 @@ a:hover {
 }
 .size {
   font-size: 9.5rem;
+}
+.user-ct {
+  margin-top: 10px;
+}
+.user-contents {
+  margin-top: 30px;
+  margin-right: 65px;
+}
+
+//レスポンシブ
+@media screen and (max-width: 480px) {
+  .sign__up {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .log_in {
+    margin-top: 40px;
+  }
+  .sign__up {
+    justify-content: center;
+  }
+  .sign__form {
+    width: 90%;
+  }
+  .user-container {
+    margin-bottom: 40px;
+    padding-top: 20px;
+  }
+  .icon {
+    margin-top: 12px;
+    margin-left: 17px;
+  }
+  .size {
+    height: 68px;
+  }
+  .user-name {
+    margin-left: 15px;
+  }
+  .message-button {
+    margin-left: 15px;
+  }
+  .span-data {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  .user-dm {
+    margin-bottom: 17px;
+  }
+  .li_main {
+    width: 100%;
+    padding-right: 7px;
+  }
+  .user_stl {
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 10px;
+  }
+  .user-body {
+    margin-right: 54px;
+  }
+  .user-contents {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .user-count {
+    margin-left: -108px;
+    margin-right: -55px;
+  }
+  .icon__img {
+    width: 68px;
+    height: 68px;
+  }
+  .icon__prf {
+    margin-left: -20px;
+  }
+  .user-dm {
+    display: block;
+  }
+  .follow-bt {
+    margin-top: 10px;
+    margin-right: -65px;
+    margin-left: -85px;
+  }
+  .svg-inline--fa.fa-w-16 {
+    width: auto;
+  }
+  .user_stl {
+    padding-bottom: 0px;
+  }
+  .user-body {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .post_box {
+    width: 100%;
+    padding-left: 30px;
+  }
+  .users__follow {
+    width: 116px;
+  }
+  .img-border {
+    width: 140px;
+    height: 186px;
+  }
+  .img__flex {
+    display: flex;
+  }
+  .posts__li {
+    margin: 5px;
+  }
+  .edit_title {
+    margin-right: auto;
+    font-size: 20px;
+  }
+  .edit__icon {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #upload-icon {
+    width: 65px;
+    height: 68px;
+    left: 154px;
+    top: 38px;
+  }
+  .preview {
+    width: 65px;
+    height: 68px;
+    top: -68px;
+    right: 154px;
+  }
+  .user-name {
+    font-size: 25px;
+  }
+  .user-ct-nm {
+    font-size: 20px;
+    color: black;
+  }
+  .user-ct-nm:hover {
+    color: black;
+  }
+  .user-ct {
+    margin-top: 13px;
+    margin-left: -5px;
+  }
+  .posts-box_ud {
+    margin-bottom: 25px;
+  }
 }

@@ -9,7 +9,7 @@
           <div>
             <p><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
           </div>
-          <div>
+          <div class="img__flex">
             <% post.images.each do |image| %>
               <%= image_tag image.url.url, :size =>'293x350', class: 'img-border' %>
             <% end %>

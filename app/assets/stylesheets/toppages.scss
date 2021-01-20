@@ -123,9 +123,8 @@ body {
 }
 .list__view {
   display: flex;
-}
-.view__ct {
-  //padding-right: 105px;
+  justify-content: space-between;
+  padding-right: 35px;
 }
 #ranks_list {
   height: 98px;
@@ -133,7 +132,6 @@ body {
 }
 .profile_ct {
   display: flex;
-  margin-right: 70px;
 }
 .top_user_name {
   font-size: 16px;
@@ -159,19 +157,8 @@ body {
   z-index: 100;
   top: 0;
 }
-.alert {
-  //margin-top: 55px;
-  //height: 60px;
-  //padding: 18px;
-}
-.log_in {
-  //margin-top: 85px;
-}
 .page-footer {
   margin-top: 50px;
-}
-#top_main {
-  //margin-top: 58px;
 }
 .container-fluid {
   margin-top: 56px;
@@ -239,4 +226,182 @@ body {
   border: solid #e8e8e8;
   height: 38px;
   width: 38px;
+}
+.top_rank_img {
+  border-radius: 100px;
+  border: solid #e8e8e8;
+  height: 63px;
+  width: 63px;
+}
+
+//レスポンシブ
+@media screen and (max-width: 480px) {
+  #header_nav {
+    width: 100vw;
+  }
+  .row_cl {
+    margin-right: 0px;
+  }
+  .topImage {
+    height: 100vw;
+  }
+  .topImage__inContent {
+    top: 90px;
+    left: 20px;
+  }
+  .topImage__inContent--title {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .topImage__inContent--content {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .topImage__inContent--div {
+    margin-top: 35px;
+    padding: 10px;
+    width: 140px;
+  }
+  .row_div {
+    margin-right: 0px;
+  }
+  .top_img {
+    height: 300px;
+  }
+  .tppag_cd {
+    width: 90%;
+  }
+  .div_rpo {
+    margin-top: -55px;
+    margin-left: -10px;
+  }
+  .top__user {
+    margin-top: -55px;
+    margin-bottom: -35px;
+  }
+  .rank_item {
+    margin-top: -15px;
+  }
+  .rank_ct {
+    display: block;
+  }
+  .icon__users {
+    font-size: 8.5px;
+  }
+  .rank_div {
+    margin-top: 0px;
+    margin-bottom: -10px;
+  }
+  #top_main {
+    display: contents;
+  }
+  .size__img {
+    width: 140px;
+    height: 186px;
+    border-radius: 10px;
+  }
+  .img__posts {
+    display: flex;
+  }
+  .text-muted {
+    font-size: 13px;
+  }
+  .search_form {
+    position: inherit;
+    right: 0;
+    margin-top: 10px;
+  }
+  #search {
+    top: 0px;
+    height: 26px;
+  }
+  .fa-search {
+    top: 64px;
+    left: 285px;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+  }
+  .top_main_content {
+    position: initial;
+    margin-left: 12px;
+    order: 2;
+    width: 323px;
+    margin-left: 27px;
+    margin-top: 10px;
+    height: 61vh;
+  }
+  .post_present {
+    width: 86%;
+    height: 25vh;
+    margin-left: 25px;
+    order: 1;
+  }
+  .list__ct {
+    padding-right: 10px;
+  }
+  #user__path {
+    margin-left: 104px;
+    margin-top: 50px;
+    top: auto;
+    left: auto;
+  }
+  .list__view {
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+  .profile_ct {
+    margin-right: 0px;
+  }
+  .index__title {
+    padding-top: 0px;
+  }
+  .svg-inline--fa.fa-w-18 {
+    font-size: 45px;
+  }
+  .top__btn {
+    padding-top: 5px;
+  }
+  .top__h4 {
+    font-size: 15px;
+  }
+  .top__index {
+    padding-top: 5px;
+  }
+  .page-footer {
+    margin-top: 0px;
+  }
+  .top_user {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  #ranks_list {
+    height: 70px;
+  }
+  .top_rank_img {
+    width: 35px;
+    height: 35px;
+  }
+  .ranks_user {
+    font-size: 20px;
+  }
+  .rank_p {
+    font-size: 15px;
+  }
+  .rank_post {
+    font-size: 15px;
+  }
+  .btn-arrival {
+    font-size: 14px;
+  }
+  .top_h4 {
+    font-size: 19px;
+  }
+  .card-title {
+    font-size: 20px;
+  }
+  .card-text {
+    font-size: 13px;
+  }
 }

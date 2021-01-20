@@ -6,7 +6,13 @@
           <ul class="list-group">
             <div class="list_main">
               <li class="list-group-item list-content">
-                <div class="icon_user"><i class="far fa-user-circle fa-5x"></i></div>
+                  <div class="icon_user res_icon">
+                    <% if user.image.present? %>
+                      <%= image_tag user.image.url, class: 'search_rank_img' %>
+                    <% else %>
+                      <i class="far fa-user-circle fa-3x"></i>
+                    <% end %>
+                  </div>
                   <div class="list_body">
                     <p class="badge badge-info" style="margin-bottom: 0;">タグ</p>
                     <p class="badge badge-info" style="margin-left: 5px; margin-bottom: 0;">タグ</p>
@@ -31,7 +37,13 @@
           <ul class="list-group">
             <div class="list_main">
               <li class="list-group-item list-content">
-                <div class="icon_user"><i class="far fa-user-circle fa-5x"></i></div>
+                  <div class="icon_user">
+                    <% if post.user.image.present? %>
+                      <%= image_tag post.user.image.url, class: 'search_rank_img' %>
+                    <% else %>
+                      <i class="far fa-user-circle fa-3x"></i>
+                    <% end %>
+                  </div>
                   <div class="list_body">
                     <div class="list_posts">
                       <a href="/posts/<%= post.id %>" id="post_ttl"><%= post.title %></a>

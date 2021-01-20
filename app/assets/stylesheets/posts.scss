@@ -31,10 +31,14 @@
   margin-left: 7vw;
 }
 .user-ct-nm {
-  font-size: 25px;
+  font-size: 28px;
+  color: black;
   margin-top: 7px;
   margin-left: 10px;
   font-weight: 600;
+}
+.user-ct-nm:hover {
+  color: black;
 }
 .img-ct {
   text-align: center;
@@ -210,4 +214,101 @@
 }
 .ctl {
   justify-content: center;
+}
+
+//レスポンシブ
+@media screen and (max-width: 480px) {
+  .posts_form {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .prev-content .preview-box {
+    height: 140px;
+  }
+  .prev-content .preview-box .upper-box {
+    width: 140px;
+    height: 174px;
+  }
+  .js_pre {
+    width: 140px;
+    height: 175px;
+  }
+  .lower-box {
+    width: 140px;
+  }
+  .js-file_group {
+    padding-right: 8px;
+    font-size: 13px;
+    margin-top: 90px;
+    padding-bottom: 10px;
+  }
+  .image_input_btn {
+    padding-top: 5px;
+    font-weight: 500;
+  }
+  .prev-content .preview-box .upper-box img {
+    width: 140px;
+    height: 175px;
+  }
+  .btn-posts {
+    height: 50px;
+    font-size: 17px;
+  }
+  .posts-main {
+    margin: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  .img-ct {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  .big-img {
+    width: 140px;
+    height: 186px;
+    margin-left: 5px;
+  }
+  .posts-under {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  #favorites__box {
+    font-size: 8px;
+  }
+  .favorite-posts {
+    font-size: 15px;
+  }
+  .post_title_ct {
+    font-size: 15px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+  }
+  .post_content_ct {
+    font-size: 13px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+  .comment-btn {
+    font-size: 14px;
+    padding: 9px;
+  }
+  .comments__users {
+    font-size: 14px;
+  }
+  .label__post {
+    font-size: 15px;
+  }
+  .btn-comments {
+    font-size: 13px;
+  }
+  .home_path {
+    font-size: 13px;
+  }
+  .img__show {
+    width: 73px;
+    height: 73px;
+    border-radius: 100px;
+    border: solid #e8e8e8;
+  }
 }

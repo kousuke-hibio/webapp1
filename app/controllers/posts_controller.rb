@@ -11,6 +11,8 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = Comment.new
     @favorite = Favorite.new 
+    @user = current_user
+    @image = @user.image
   end 
 
   def create
