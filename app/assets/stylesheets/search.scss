@@ -84,3 +84,55 @@
   position: fixed;
   right: 140px;
 }
+
+//レスポンス
+@media screen and (max-width: 480px) {
+  .search_list {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: 20px;
+  }
+  .search_text_ct {
+    display: flex;
+  }
+  .img_rd {
+    width: 140px;
+    height: 184px;
+  }
+  .search_font {
+    margin-top: 20px;
+    margin-bottom: auto;
+    padding-left: 10px;
+  }
+  .list-group {
+    border-radius: 25px;
+  }
+  .list-group-item:last-child {
+    border-radius: 25px;
+  }
+  .icon_user {
+    padding-top: 7px;
+  }
+  .search_text {
+    padding-left: 10px;
+  }
+  .res_icon {
+    width: 65px;
+  }
+  .search_rank_img {
+    border-radius: 100px;
+    border: solid #e8e8e8;
+    height: 47px;
+    width: 47px;
+  }
+  .search-count {
+    margin-bottom: -15px;
+    font-size: 14px;
+  }
+  .search_style {
+    font-size: 20px;
+  }
+  #post_ttl {
+    font-size: 20px;
+  }
+}

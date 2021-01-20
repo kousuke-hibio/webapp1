@@ -9,9 +9,11 @@
               <span class="text-muted"> posted at <%= post.created_at %></span>
             </div>
             <p style="text-align: left;"><a href="/posts/<%= post.id %>" class="posts_title"><%= post.title %></a></p>
-            <% post.images.each do |image| %>
-              <%= image_tag image.url.url, :size =>'293x350' %>
-            <% end %>
+            <div class="img__posts">
+              <% post.images.each do |image| %>
+                <%= image_tag image.url.url, :size =>'293x350', class: 'size__img' %>
+              <% end %>
+            </div>
             <% if current_user == post.user %>
               <button id="delete__btn">
                 <i class="far fa-trash-alt"></i>
@@ -30,7 +32,7 @@
         <i class="far fa-images fa-8x"></i>
       </div>
       <div class="top__index">
-        <h4 style="font-weight: 600;">フォローしたユーザの投稿や自分の投稿が表示されます。</h4>
+        <h4 style="font-weight: 600;" class="top__h4">フォローしたユーザの投稿や自分の投稿が表示されます。</h4>
       </div>
       <div class="top__btn">
         <%= link_to 'プロフィールを確認する', user_path(current_user), class: 'btn btn-arrival' %>

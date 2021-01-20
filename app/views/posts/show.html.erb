@@ -1,10 +1,15 @@
 <div class="posts-show-ct">
     <div class="user-icon">
       <div>
-        <i class="far fa-user-circle fa-5x"></i>
+        <% if @post.user.image.present? %>
+          <%= image_tag @post.user.image.url, class: 'img__show' %>
+        <% else %>
+          <i class="far fa-user-circle fa-5x"></i>
+        <% end %>
       </div>
       <div class="user-ct">
-        <div class="user-ct-nm"><%= @post.user.name %></div><span class="text-muted"> posted at <%= @post.created_at %></span>
+        <div><a href="/users/<%= @post.user.id %>" class="user-ct-nm"><%= @post.user.name %></a></div>
+        <span class="text-muted"> posted at <%= @post.created_at %></span>
       </div>
     </div>
   <div class="posts-main card">
@@ -15,7 +20,7 @@
     </div>
     <div class="posts-under">
       <div class="posts-box_ud">
-        <%= render "favorites/favorite_button", post: @post %>
+        <div id="favorites__box"><%= render "favorites/favorite_button", post: @post %></div>
           <div class="favorite-count">
             <div class="favorite-posts">
               いいね ! <%= @post.favorites.count %>件
@@ -34,7 +39,7 @@
           </div>
             <h4 class="comment-btn">コメント一覧</h4>
           <% @comments.each do |c| %>
-            <div>
+            <div class="comments__users">
               <a href="/users/<%= @post.user.id %>"><%= c.user.email %></a>
               <%= c.text %>
               <hr>
@@ -42,12 +47,14 @@
           <% end %>
         <div class="form-group">
           <%= form_for [@post, @comment] do |f| %>
-            <label for="text1">Comments: </label>
+            <label for="text1" class="label__post">Comments: </label>
             <%= f.text_field :text, class: 'form-control' %>
             <%= f.submit 'コメントする', class: 'btn btn-comments' %>
           <% end %>
         </div>
-        <%= link_to "ホームへ戻る", root_path %>
+        <div class="home_path">
+          <%= link_to "ホームへ戻る", root_path %>
+        </div>
       </div>
     </div>
   <div>

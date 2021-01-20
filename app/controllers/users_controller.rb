@@ -62,6 +62,8 @@ class UsersController < ApplicationController
     else
       @posts = Post.search(params[:search], @user_or_post)
     end
+    @user = current_user
+    @image = @user.image
   end 
 
   def likes

@@ -85,16 +85,16 @@
           </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row row_div">
       <div class="col text-center p-4">
         <h4 class="font-weight-bold top_h4">
           新着投稿
         </h4>
       </div>
     </div>
-    <div class="row px-4">
+    <div class="row px-4 row_div">
       <% @posts.each do |post| %>
-        <div class="col-lg-4 p-4">
+        <div class="col-lg-4 p-4 div_rpo">
           <div class="card tppag_cd">
             <% post.images.each_with_index do |image,i| %>
               <% if i == 1 %>
@@ -102,29 +102,33 @@
               <% end %>
             <% end %>
             <div class="card-body">
-              <h4 class="card-title">スダンダードコース</h4>
-              <p class="card-text">ホームページ作成・Web集客を一通り習得したい方向けです。</p>
+              <h4 class="card-title">トレンドカラーレシピ</h4>
+              <p class="card-text">カラーリング再現率を上げるための調合・選定を学ぶことができます。</p>
               <a href="/posts/<%= post.id %>" class="btn btn-arrival">詳細を見る</a>
             </div>
           </div>
         </div>
       <% end %>
     </div>
-    <div class="row">
-      <div class="col text-center p-4">
+    <div class="row row_div">
+      <div class="col text-center p-4 top__user">
         <h4 class="font-weight-bold top_h4">
           人気ユーザ一覧
         </h4>
       </div>
     </div>
-    <div class="row px-4">
+    <div class="row px-4 row_div">
       <% @ranks.each_with_index do |user| %>
         <div class="col-lg-4 p-4">
           <ul class="list-group" style="border-radius: 20px;">
             <li class="list-group-item" style="border-radius: 20px;height: 215px;">
               <div class="rank_ct">
-                <div>
-                  <i class="fas fa-user-circle fa-4x"></i>
+                <div class="icon__users">
+                  <% if user.image.present? %>
+                    <%= image_tag user.image.url, class: 'top_rank_img' %>
+                  <% else %>
+                    <i class="fas fa-user-circle fa-4x"></i>
+                  <% end %>
                 </div>
                 <div class="rank_item">
                   <div class="rank_index">

@@ -1,6 +1,7 @@
 # Reprodcue the color
+![](https://i.gyazo.com/2becc4444ada23e91b8c71cceaa32be3.jpg)
 
-## 概要
+**概要**
 
 美容師専用のカラーの再現率を上げるアプリです。
 
@@ -74,4 +75,6 @@
 
 **App URL**
 
-* テストユーザーで誰でも登録なしでログインできます。
+* よろしければご覧ください
+
+* https://hair.recolor.tokyo/
